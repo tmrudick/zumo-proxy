@@ -5,6 +5,7 @@ var listenPort = process.env.PORT;
 
 http.createServer(function(req, res) {
 	var headers = {};
+	// TODO: I probably don't want to remove _all_ of the other headers...
 	for (var header in req.headers) {
 		if (header.indexOf('x-zumo') == 0) {
 			headers[header] = req.headers[header];
